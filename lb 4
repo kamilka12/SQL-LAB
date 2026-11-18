@@ -1,0 +1,35 @@
+SELECT *
+FROM customer
+ORDER BY last_name;
+
+SELECT DISTINCT manufacture
+FROM product
+ORDER BY manufacture;
+
+SELECT product_name, manufacture, category, product_type, price
+FROM product
+WHERE manufacture = 'DELL'
+ORDER BY product_name;
+
+SELECT first_name, last_name, genger, birth_date, phone_number
+FROM customer
+WHERE genger = 'F'
+  AND birth_date BETWEEN '1990-01-01' AND '2000-12-31'
+ORDER BY last_name;
+
+SELECT *
+FROM product
+WHERE category = 'NOTEBOOK'
+  AND amount > 0
+  AND product_description LIKE '%512GB%';
+
+SELECT *
+FROM product
+WHERE category IN ('NOTEBOOK', 'Desktops')
+  AND amount > 0
+  AND (product_description LIKE '%512%'
+       OR product_description LIKE '%1TB%');
+
+SELECT *
+FROM invoice
+WHERE customer_id IS NULL;
