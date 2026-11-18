@@ -1,7 +1,11 @@
+DROP DATABASE IF EXISTS company;
+CREATE DATABASE company;
+USE company;
+
 CREATE TABLE IF NOT EXISTS `department` (
 	`department_id` int NOT NULL,
 	`department_name` varchar(30) NOT NULL,
-	`city` varchar(30) NOT NULL DEFAULT 'Lviv',
+	`city` varchar(30) NOT NULL,
 	`street` varchar(40) NOT NULL,
 	`building_no` int,
 	PRIMARY KEY (`department_id`)
@@ -25,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `customer` (
 	`last_name` varchar(30) NOT NULL,
 	`genger` varchar(1) NOT NULL,
 	`birth_date` date NOT NULL,
-	`phone_number` bigint NOT NULL,
+	`phone_number` int NOT NULL,
 	`email` varchar(50) NOT NULL,
 	`discount` int,
 	PRIMARY KEY (`customer_id`)
